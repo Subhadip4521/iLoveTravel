@@ -1,0 +1,5 @@
+to get html element from the tiny editor:
+
+within the console type:
+tinyMCE.get('mytextarea').getContent();
+

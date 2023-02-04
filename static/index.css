@@ -1,0 +1,19 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: rgb(246, 251, 251);
+}
+
+button a{
+    color: black;
+}
+
+footer a{
+    cursor: pointer;
+    text-decoration: none;
+}
+
+

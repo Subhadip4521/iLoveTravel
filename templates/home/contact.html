@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact{% endblock title %}
+{% block contactactive %}active{% endblock contactactive %}
+{% block body %}
+
+    <div class="container-fluid my-4">
+        <div class="row">
+            <div class="col-6">
+                <img src="../static/img/test.jpeg" alt="" style="width:600px;height:460px">
+            </div>
+            <div class="col-6 px-5">
+                <h2>Contact Us</h2>
+                <br>
+                <form method="post" action="/contact">
+                  {% csrf_token %}
+                    <div class="row">
+                      <div class="col">
+                        <label for="firstname">First Name</label>
+                        <input type="text" class="form-control" placeholder="First name" name="firstname" required>
+                      </div>
+                      <div class="col">
+                        <label for="lastname">Last Name</label>
+                        <input type="text" class="form-control" placeholder="Last name" name="lastname" required>
+                      </div>
+                    </div>
+
+
+                    <div class="row my-3">
+                        <div class="col">
+                            <label for="email">Email</label>
+                          <input type="text" class="form-control" placeholder="Email" name="email" required>
+                        </div>
+                        <div class="col">
+                            <label for="phnnum">Phone number</label>
+                          <input type="phone" class="form-control" placeholder="Phone number" name="phone" required>
+                        </div>
+                      </div>
+                  
+
+
+
+                  <div class="row my-3">
+                    <label for="validationTextarea">Write your doubt</label>
+                    <textarea class="form-control" id="validationTextarea" placeholder="Write your doubt" required name="desc"></textarea>
+                  </div>
+                  <div class="row my-3">
+                    <label for="validationTextarea">Feedback</label>
+                    <textarea class="form-control" id="validationTextarea" placeholder="Write feedback" required name="feedback"></textarea>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container my-3" style="text-align:end">
+      <a href="/contact">Back to top</a>
+    </div>
+
+    
+{% endblock body %}

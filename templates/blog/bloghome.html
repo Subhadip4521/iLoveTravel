@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}Blog{% endblock title %}
+{% block blogactive %}active{% endblock blogactive %}
+
+{% block js %}
+<script>
+    let previews = document.getElementByClassName('preview');
+    Array.form(previews).forEach((element) => {
+        element.innerHTML = element.innerText;
+    })
+</script>
+{% endblock js %}
+
+{% block body %}
+
+
+{% for post in allposts %}
+
+
+<div class="mt-5 px-3 py-3 mx-5" style="background-color:rgb(223, 236, 236);">
+    <div class="row">
+        <div class="col-lg-6 my-3">
+            <h3><a href="/blog/{{post.slug}}" style="color: rgb(6, 6, 6); text-decoration: none;">{{post.title}}</a>
+            </h3>
+            <h6>by {{post.author}}<span> ({{post.views}} views)</span></h6>
+            <p class="my-1">{{post.timestamp}}</p>
+            <br>
+            <p class="card-text mb-auto">
+                <div class="preview">{{post.content|safe|truncatechars:300}}</div>
+            </p>
+
+            <a href="/blog/{{post.slug}}" style="color: rgb(255, 254, 254); text-decoration: none;"><button
+                    type="button" class="btn btn-primary my-3">Continue reading</button></a>
+        </div>
+
+        <div class="col-lg-1">
+
+        </div>
+
+        <div class="glow col-lg-5">
+            <img src="../static/img/test.jpeg" alt="" style="width: 450px" class="my-3">
+        </div>
+    </div>
+</div>
+
+{% endfor %}
+
+
+<div class="container my-3" style="text-align:end">
+    <a href="/blog">Back to top</a>
+</div>
+
+{% endblock body %}

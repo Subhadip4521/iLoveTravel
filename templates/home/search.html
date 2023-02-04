@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}Search Results{% endblock title %} 
+{% block blogactive %}active{% endblock blogactive %}
+{% block body %}
+
+<div class="container my-3">
+    <h3>Search Results:</h3>
+    {% if allposts|length < 1 %}
+        <p>Your search: <b>{{query}}</b> does not match any document.</p>
+        <p>Suggestion:</p>
+        <ul>
+            <li>Try different query</li>
+        </ul>
+
+    {% endif %}
+</div>
+{% for post in allposts %}
+
+
+<div class="my-3 px-2 py-2 mx-5" style="background-color:rgb(223, 236, 236);">
+    <div class="row">
+        <div class="col-lg-6 my-3">
+            <h3>{{post.title}}</h3>
+            <h4>-By {{post.author}}<span></span></h4>
+            <h6>{{post.date}}</h6>
+            <br>
+            <p class="card-text mb-auto">{{post.content | truncatechars:500}}</p>  
+
+            <button type="button" class="btn btn-primary my-3"><a href="/blog/{{post.slug}}" style="color: rgb(255, 254, 254); text-decoration: none;">Continue reading</a></button>        
+        </div>
+
+        <div class="col-lg-1">
+            
+        </div>
+        
+        <div class="glow col-lg-5">
+            <img src="../static/img/test.jpeg" alt="" style="width: 450px" class="my-3">
+        </div>
+    </div>
+</div>
+
+{% endfor %}
+
+
+<div class="container my-3" style="text-align:end">
+    <a href="/blog">Back to top</a>
+</div>
+
+{% endblock body %}
