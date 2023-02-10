@@ -34,7 +34,7 @@
         <li class="nav-item {% block kolkataactive %}{% endblock kolkataactive %}">
           <a class="nav-link" href="/kolkata">Kolkata</a>
         </li>
-        <li class="nav-item dropdown {% block indiaactive %}{% endblock indiaactive %}">
+        {% comment %} <li class="nav-item dropdown {% block indiaactive %}{% endblock indiaactive %}">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
             aria-expanded="false">India</a>
           <div class="dropdown-menu">
@@ -45,7 +45,7 @@
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Others</a>
           </div>
-        </li>
+        </li> {% endcomment %}
         <li class="nav-item {% block blogactive %}{% endblock blogactive %}">
           <a class="nav-link" href="/blog">Blogs</a>
         </li>
@@ -71,16 +71,6 @@
               Welcome <b>{{request.user.username}}</b>
             </a>
             <div class="dropdown-menu" style="background-color: #fefefe;">
-              {% comment %} <a class="dropdown-item" href="todo.html">Your profile</a>
-              <a class="dropdown-item" href="feestracker.html">Products overview</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Paid version</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Settings</a>
-              <a class="dropdown-item" href="#">Help and support</a>
-              <a class="dropdown-item" href="#">Give feedback</a>
-              <div class="dropdown-divider"></div>
-              <br><br> {% endcomment %}
               <a class="dropdown-item" href="/logout">Logout</a>
               <a class="dropdown-item" href="#">Privacy policies</a>
               <p class="dropdown-item"> &copy;iLoveTravel2022</p>
