@@ -27,7 +27,7 @@
             <h4>-By {{post.author}}<span></span></h4>
             <h6>{{post.date}}</h6>
             <br>
-            <p class="card-text mb-auto">{{post.content | truncatechars:500}}</p>  
+            <p class="card-text mb-auto">{{post.content|truncatechars:500|safe}}</p>  
 
             <button type="button" class="btn btn-primary my-3"><a href="/blog/{{post.slug}}" style="color: rgb(255, 254, 254); text-decoration: none;">Continue reading</a></button>        
         </div>
