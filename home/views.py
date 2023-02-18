@@ -128,3 +128,8 @@ def search(request):
 def kolkata(request):
     # return HttpResponse('This is kolkata page.')
     return render(request, 'home/kolkata.html')
+
+
+
+def payment(request):
+    return render(request, 'home/payment.html')
