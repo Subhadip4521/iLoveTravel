@@ -7,7 +7,6 @@ from django.contrib.auth import logout,authenticate,login
 from blog.models import Post
 
 
-
 # password for testcase in admin user---> dipdas123
 
 # Create your views here.
@@ -19,6 +18,7 @@ def index(request):
     return render(request, 'home/index.html')
 
 def signupUser(request):
+    # print(request.method)
     
     if request.method=="POST":
         firstname=request.POST['firstname']
@@ -27,6 +27,7 @@ def signupUser(request):
         email=request.POST['email']
         password=request.POST['password']
         password2=request.POST['password2']
+
 
         #Check for errorneous inputs
         if (len(username)>10):
