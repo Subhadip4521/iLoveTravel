@@ -12,7 +12,9 @@
         {% comment %} <img src="..." class="card-img-top" alt="..."> {% endcomment %}
         <div class="card-body">
             <h1>{{post.title}}</h1>
-            <p>by {{post.author}}  (<span>{{post.views}} views</span>)</p>
+            <p>by {{post.author}}  
+                (<span>{{post.views}} views</span>)
+            </p>
             <p>{{post.timestamp}}</p>
             <hr>
             <p class="card-text">{{post.content|safe}}</p>
